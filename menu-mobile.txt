@@ -1,0 +1,24 @@
+.header__links {
+          display: none;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: auto;
+          background-color: #fff;
+          @include display(flex, center, center);
+          flex-direction: column;
+          padding-top: 80px;
+          padding-bottom: 80px;
+          .header__item {
+            margin-bottom: 30px;
+            .header__SignUp {
+              cursor: pointer;
+              width: 230px;
+            }
+            a {
+              color: black;
+              cursor: pointer;
+            }
+          }
+        }

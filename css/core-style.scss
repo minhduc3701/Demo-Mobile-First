@@ -1,0 +1,201 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: AdobeRegular;
+  src: url(./../font/Adobe/AdobeClean-Regular.otf);
+}
+@font-face {
+  font-family: ElleMedium;
+  src: url(./../font/Elle/Elle-Futura-Medium.otf);
+}
+@font-face {
+  font-family: ElleHeavy;
+  src: url(./../font/Elle/Elle-Futura-Heavy.otf);
+}
+@font-face {
+  font-family: AdobeRegular;
+  src: url(./../font/Adobe/AdobeClean-Regular.otf);
+}
+@font-face {
+  font-family: AdobeBold;
+  src: url(./../font/Adobe/AdobeClean-Bold.otf);
+}
+
+$AdobeBold: AdobeBold;
+$AdobeRegular: AdobeRegular;
+$ElleHeavy: ElleHeavy;
+$ElleMedium: ElleMedium;
+$redColor: #b00006;
+
+@mixin font($fam, $size, $color) {
+  font-family: $fam;
+  font-size: $size;
+  color: $color;
+}
+@mixin box-shadow {
+  box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.4);
+}
+
+@mixin display($flex, $justify, $align) {
+  display: $flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+div {
+  display: block;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+}
+p {
+  font-family: $AdobeRegular;
+  font-size: 16px;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+body {
+  background-color: #fff;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.padding-container {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.btn {
+  background-color: #fff;
+  color: $redColor;
+  max-width: 305px;
+  border-radius: 15px 0 15px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.product__btn-style {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 0 15px 0 15px;
+  @include box-shadow();
+  @include display(flex, center, center);
+  img {
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 0 35px 0 35px;
+  @include box-shadow();
+}
+
+.track__btn {
+  // width: 48px;
+  // height: 48px;
+  width: 35px;
+  height: 35px;
+  z-index: 99;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  outline: none;
+  cursor: pointer;
+  @include display(flex, center, center);
+  i {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+}
+
+.card__product {
+  background-color: #fff;
+  max-width: 450px;
+  // max-height: 251px;
+  height: auto;
+  border-radius: 0 30px 0 30px;
+  line-height: 1.56;
+  @include box-shadow();
+  .card__container {
+    width: 100%;
+    height: auto;
+    // padding: 35px 32px 21px 60px;
+    padding: 22px 10px 20px 22px;
+    h4 {
+      @include font($ElleHeavy, 18px, black);
+    }
+    p {
+      @include font($AdobeRegular, 16px, black);
+      margin-top: 24px;
+      margin-bottom: 13px;
+    }
+    a {
+      @include font($AdobeRegular, 16px, $redColor);
+    }
+  }
+}
+
+input {
+  max-width: 350px;
+  height: 70px;
+  border: none;
+  border-radius: 10px 0 10px 10px;
+  margin-bottom: 37px;
+  &:placeholder-shown {
+    padding: 0 28px;
+    @include font(AdobeRegular, 16px, white);
+  }
+}
+
+textarea {
+  border-radius: 10px 0 10px 10px;
+  height: 214px;
+  max-width: 350px;
+  &:placeholder-shown {
+    padding: 27px 26px;
+    @include font(AdobeRegular, 16px, white);
+  }
+}
+// .grid {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+// }

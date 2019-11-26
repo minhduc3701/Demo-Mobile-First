@@ -1,0 +1,129 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+div,
+section {
+  display: block;
+}
+@font-face {
+  font-family: ElleMedium;
+  src: url(./../font/Elle/Elle-Futura-Medium.otf);
+  font-family: ElleBold;
+  src: url(./../font/Elle/Elle-Futura-Bold.otf);
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  background-color: wheat;
+  color: #898989;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+
+.col-3 {
+  width: 25%;
+}
+.border-right {
+  border-right: 1px solid rgba(128, 128, 128, 0.5);
+}
+.section__body > * {
+  margin-bottom: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: black;
+  line-height: 1.4;
+}
+
+.center-align {
+  text-align: center !important;
+}
+.wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  .section {
+    position: relative;
+    .section__wrapper {
+      padding: 80px 0;
+      font-size: 14px;
+      .section__container {
+        padding: 0 6%;
+        max-width: 1300px;
+        max-width: calc(1100px + 12%);
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        .section__header {
+          position: relative;
+          vertical-align: middle !important;
+          width: 100%;
+          max-width: 100%;
+          h1 {
+            font-size: 30px;
+          }
+        }
+        .section__main {
+          padding-top: 30px;
+          .section__content {
+            // margin: 0 -30px;
+            &::after {
+              content: "";
+              clear: both;
+              display: table;
+            }
+            .section__item {
+              padding: 0 30px;
+              float: left;
+              &:last-child {
+                border-right: none;
+              }
+              .section__img {
+                margin: 0 auto;
+                max-width: 100%;
+                margin-bottom: 30px;
+                img {
+                  max-width: auto;
+                  max-height: auto;
+                  object-fit: cover;
+                }
+              }
+              .section__body {
+                .section__body-title {
+                  font-size: 18px;
+                  color: black;
+                }
+                a {
+                  font-size: 12px;
+                  font-weight: 600;
+                  color: #ee1111;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .col-3 {
+    width: 100%;
+    margin-top: 50px;
+  }
+  .border-right {
+    border-right: none;
+  }
+}
